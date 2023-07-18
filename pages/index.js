@@ -13,6 +13,8 @@ import consulting from "../public/consulting.png";
 import Image from "next/image";
 import web1 from "../public/web1.png";
 import web2 from "../public/web2.png";
+import Link from 'next/link';
+
 
 
 export default function Home() {
@@ -24,9 +26,7 @@ export default function Home() {
   const vercelProjectURL1 = 'https://metaverse-qxg5oxc36-priyanshi1908.vercel.app';
   const vercelProjectURL2 = 'https://defi-oeaf3dthl-priyanshi1908.vercel.app';
   
-  const handleEmailClick = () => {
-    window.location.href = `mailto:${email}`;
-  };
+  
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -69,13 +69,15 @@ export default function Home() {
             </p>
             
             <div className="text-5xl flex justify-center gap-16  text-gray-600 dark:text-gray-400">
-            <div>
-            <div onClick={handleEmailClick} className="cursor-pointer">
-
-               <AiFillMail/>
-            </div>
-            </div>
-
+           
+              <div>
+                <Link href="/blankpage">
+                  <a>
+                    <AiFillMail />
+                  </a>
+                </Link>
+              </div>
+            
             <div>
             <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
             <AiFillLinkedin />
