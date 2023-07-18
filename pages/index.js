@@ -17,10 +17,16 @@ import web2 from "../public/web2.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+  const email = 'priyanshideshpande19@gmail.com';
+  const linkedinURL = 'https://in.linkedin.com/in/priyanshi-deshpande-026718256';
+  const githubURL = 'https://github.com/Priyanshi1908';
+
   const vercelProjectURL1 = 'https://metaverse-qxg5oxc36-priyanshi1908.vercel.app';
   const vercelProjectURL2 = 'https://defi-oeaf3dthl-priyanshi1908.vercel.app';
   
-
+  const handleEmailClick = () => {
+    window.location.href = `mailto:${email}`;
+  };
 
   return (
     <div className={darkMode ? "dark" : ""}>
@@ -61,10 +67,27 @@ export default function Home() {
               Aspiring Junior developer providing services for programming and design content
               needs. Join me down below to see some of my projects.
             </p>
+            
             <div className="text-5xl flex justify-center gap-16  text-gray-600 dark:text-gray-400">
-              <AiFillMail/>
-              <AiFillLinkedin />
-              <AiFillGithub />
+            <div>
+            <div onClick={handleEmailClick} className="cursor-pointer">
+
+               <AiFillMail/>
+            </div>
+            </div>
+
+            <div>
+            <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
+            <AiFillLinkedin />
+            </a>
+            </div>
+
+             <div>
+             <a href={githubURL} target="_blank" rel="noopener noreferrer">
+
+             <AiFillGithub />
+             </a>
+             </div>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-3 md:h-80 md:w-80">
               <Image src={deved} layout="fill" objectFit="cover" />
